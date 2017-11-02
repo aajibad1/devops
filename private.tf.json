@@ -1,0 +1,9 @@
+# Define private subnet with CIDR 10.0.2.0/24
+resource "aws_subnet"  "private-subnet-us-east-1"{
+  vpc_id = "${aws_vpc.default.id}"
+  cidr_block = "${var.private_subnet_cidr}"
+  availability_zone = "us-east-1"
+  tags{
+    Name = "levvel private Subnet"
+  }
+}
