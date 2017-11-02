@@ -1,0 +1,54 @@
+# variables
+variable "region" {
+  description ="AWS region to deploy the EC2 instance"
+  default = "us-east-1"
+}
+variable "key_path" {
+  description = "key path for SSHing into EC2 instances"
+  default = "~/Desktop/EC2-pair/levvel.pem"
+}
+
+
+variable "vpc_cidr" {
+  description = "CIDR for VPC"
+  default = "10.0.0.0/16"
+}
+
+variable "public_subnet_cidr" {
+  description = " CIDR for public subnet"
+  default = "10.0.1.0/24"
+}
+
+variable "private_subnet_cidr" {
+  description = "CIDR for private subnet"
+  default = "10.0.2.0/24"
+}
+
+variable "amis" {
+  description = "Mapping Base AMI to launch on identified region instances"
+  default = {
+    us-east-1 = "ami-8c1be5f6"
+    us-east-2 = "ami-cd0f5cb6"
+
+  }
+}
+
+variable "users" {
+  description = "list of created users om instance"
+  default = ["admin", "ade"]
+}
+
+variable "key_name" {
+  description = "Name of the SSH keypair to use in AWS."
+  default = "levvel"
+}
+
+variable "instance_name" {
+  description = "Instance Name"
+  default = "levvel-web"
+}
+
+variable "instance_type" {
+    description = "Instance type"
+    default = "t2.micro "
+}
