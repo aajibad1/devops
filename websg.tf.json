@@ -29,9 +29,9 @@ egress {
   protocol = "tcp"
   cidr_blocks = ["${var.private_subnet_cidr}"]
 }
-vpc_id = "${aws_vpc.default.id}"
+vpc_id = "${aws_vpc.vpc_main.id}"
 
 tags {
-  Name = "webserverSG"
+  Name = "public instances security group"
 }
 }
