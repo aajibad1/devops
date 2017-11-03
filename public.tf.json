@@ -1,8 +1,8 @@
-# Define public subnet with CIDR 10.0.1.0/24
-resource "aws_subnet" "public-subnet-in-us-east-1"{
-  vpc_id = "${aws_vpc.default.id}"
+# Create a public subnet to launch our load balancers
+resource "aws_subnet" "public"{
+  vpc_id = "${aws_vpc.vpc_main.id}"
   cidr_block = "${var.public_subnet_cidr}"
-  availability_zone = "us-east-1"
+  map_public_ip_on_launch = true
   tags{
     Name = "levvel public subnet"
   }
