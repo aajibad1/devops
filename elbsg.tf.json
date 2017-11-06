@@ -1,7 +1,7 @@
 # A security group for the ELB so it is accessible via the web
 resource "aws_security_group" "elb" {
   name = "sec_group_elb"
-  description = "Security group fpr public facing ELB's"
+  description = "Security group fpr public facing ELB"
   vpc_id = "${aws_vpc.vpc_main.id}"
 
 

@@ -22,6 +22,12 @@ ingress {
   protocol = "icmp"
   cidr_blocks = ["0.0.0.0/0"]
 }
+ingress {
+  from_port = 22
+  to_port = 22
+  protocol = "tcp"
+  cidr_blocks = ["0.0.0.0/0"]
+}
 
 egress {
   from_port = 3306
@@ -32,6 +38,6 @@ egress {
 vpc_id = "${aws_vpc.vpc_main.id}"
 
 tags {
-  Name = "public instances security group"
+  Name = "web security group"
 }
 }
